@@ -1,11 +1,8 @@
 <?php
 include('../lib/Session.php');
 include('../lib/Connection.php');
-
 $session = new Session();
-
 $act = isset($_GET['act']) ? strtolower($_GET['act']) : '';
-
 if ($act == 'login') {
     $username = $_POST['username'];
     $password = $_POST['password'];
