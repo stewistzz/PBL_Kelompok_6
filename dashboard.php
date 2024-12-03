@@ -22,7 +22,7 @@
             <span class="brand-text font-weight-light">Dashboard Admin</span>
         </a>
 
-        <!-- Sidebar -->
+        <!-- Sidebar --> 
         <div class="sidebar">
             <!-- Sidebar Menu -->
             <nav class="mt-2">
@@ -121,7 +121,7 @@
                         </table>
 
                         <div class="d-flex justify-content-between mt-3">
-                            <span>Menampilkan 1 dari 300 data</span>
+                            <span>Menampilkan 1 dari 280 data</span>
                             <nav>
                                 <ul class="pagination">
                                     <li class="page-item"><a class="page-link" href="#">Sebelum</a></li>
