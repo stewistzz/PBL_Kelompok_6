@@ -1,7 +1,7 @@
 <?php
 include('lib/Session.php');
 $session = new Session();
-if ($session->get('is_login') !== true) {
+if ($session->get('is_login') === true) {
   header('Location: login.php');
 }
 ?>
@@ -17,9 +17,9 @@ if ($session->get('is_login') !== true) {
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="admin_lte/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="admin_lte/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -33,7 +33,7 @@ if ($session->get('is_login') !== true) {
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="admin_lte/index3.html" class="nav-link">Home</a>
+          <a href="adminlte/index3.html" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -74,7 +74,7 @@ if ($session->get('is_login') !== true) {
             <a href="#" class="dropdown-item">
               <!-- Message Start -->
               <div class="media">
-                <img src="admin_lte/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <img src="adminlte/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     Brad Diesel
@@ -90,7 +90,7 @@ if ($session->get('is_login') !== true) {
             <a href="#" class="dropdown-item">
               <!-- Message Start -->
               <div class="media">
-                <img src="admin_lte/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <img src="adminlte/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     John Pierce
@@ -106,7 +106,7 @@ if ($session->get('is_login') !== true) {
             <a href="#" class="dropdown-item">
               <!-- Message Start -->
               <div class="media">
-                <img src="admin_lte/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <img src="adminlte/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     Nora Silvester
@@ -166,8 +166,8 @@ if ($session->get('is_login') !== true) {
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="admin_lte/index3.html" class="brand-link">
-        <img src="admin_lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <a href="adminlte/index3.html" class="brand-link">
+        <img src="adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
       </a>
 
@@ -176,7 +176,7 @@ if ($session->get('is_login') !== true) {
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="admin_lte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block">Alexander Pierce</a>
@@ -210,19 +210,19 @@ if ($session->get('is_login') !== true) {
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="admin_lte/index.html" class="nav-link">
+                  <a href="adminlte/index.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Dashboard v1</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="admin_lte/index2.html" class="nav-link">
+                  <a href="adminlte/index2.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Dashboard v2</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="admin_lte/index3.html" class="nav-link">
+                  <a href="adminlte/index3.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Dashboard v3</p>
                   </a>
@@ -704,7 +704,7 @@ if ($session->get('is_login') !== true) {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="admin_lte/starter.html" class="nav-link">
+                  <a href="adminlte/starter.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Starter Page</p>
                   </a>
@@ -736,7 +736,7 @@ if ($session->get('is_login') !== true) {
             </li>
             <li class="nav-header">MISCELLANEOUS</li>
             <li class="nav-item">
-              <a href="admin_lte/iframe.html" class="nav-link">
+              <a href="adminlte/iframe.html" class="nav-link">
                 <i class="nav-icon fas fa-ellipsis-h"></i>
                 <p>Tabbed IFrame Plugin</p>
               </a>
@@ -906,13 +906,13 @@ if ($session->get('is_login') !== true) {
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="admin_lte/plugins/jquery/jquery.min.js"></script>
+  <script src="adminlte/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="admin_lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="admin_lte/dist/js/adminlte.min.js"></script>
+  <script src="adminlte/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="admin_lte/dist/js/demo.js"></script>
+  <script src="adminlte/dist/js/demo.js"></script>
 </body>
 
 </html>
