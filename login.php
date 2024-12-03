@@ -5,7 +5,6 @@ if ($session->get('is_login') === true) {
   header('Location: index.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,42 +12,33 @@ if ($session->get('is_login') === true) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Log in (v2)</title>
-
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallb
+ack">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="admin_lte/plugins/fontawesome-free/css/all.min.css">
-
+  <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="admin_lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-
+  <link rel="stylesheet" href="adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="admin_lte/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition login-page">
   <div class="login-box">
     <!-- /.login-logo -->
-    <div class="card card-outline card-primary">
-      <div class="card-header text-center">
-        <a href="/" class="h1"><b>Admin</b>LTE</a>
-      </div>
+    <div class="card card-outline card-psrimary">
+      <div class="card-header text-center"><a href="/" class="h1"><b>Admin</b>LTE</a></div>
       <div class="card-body">
         <p class="login-box-msg">Sign in to start your session</p>
-
         <?php
         $status = $session->getFlash('status');
         if ($status === false) {
           $message = $session->getFlash('message');
-          echo '<div class="alert alert-warning">' . $message . 
-            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            </div>';
+          echo '<div class="alert alert-warning">' . $message . '<button type="button" class="close" data-dismiss="alert" aria-
+label="Close"><span aria-hidden="true">&times;</span></div>';
         }
         ?>
-
         <form action="action/auth.php?act=login" method="post" id="form-login">
           <div class="input-group mb-3">
             <input type="text" class="form-control" name="username" placeholder="Username">
@@ -59,7 +49,8 @@ if ($session->get('is_login') === true) {
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" name="password" placeholder="Password">
+            <input type="password" class="form-control" name="password"
+              placeholder="Password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -70,9 +61,7 @@ if ($session->get('is_login') === true) {
             <div class="col-8">
               <div class="icheck-primary">
                 <input type="checkbox" id="remember">
-                <label for="remember">
-                  Remember Me
-                </label>
+                <label for="remember">Remember Me</label>
               </div>
             </div>
             <!-- /.col -->
@@ -88,21 +77,17 @@ if ($session->get('is_login') === true) {
     <!-- /.card -->
   </div>
   <!-- /.login-box -->
-
   <!-- jQuery -->
-  <script src="admin_lte/plugins/jquery/jquery.min.js"></script>
-
+  <script src="adminlte/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="admin_lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="admin_lte/dist/js/adminlte.min.js"></script>
-  <script src="admin_lte/plugins/jquery-validation/jquery.validate.min.js"></script>
-  <script src="admin_lte/plugins/jquery-validation/additional-methods.min.js"></script>
-  <script src="admin_lte/plugins/jquery-validation/localization/messages_id.min.js"></script>
-
+  <script src="adminlte/dist/js/adminlte.min.js"></script>
+  <script src="adminlte/plugins/jquery-validation/jquery.validate.min.js"></script>
+  <script src="adminlte/plugins/jquery-validation/additional-methods.min.js"></script>
+  <script src="adminlte/plugins/jquery-validation/localization/messages_id.min.js"></script>
   <script>
-    // untuk ketika dokumen sudah siap (HTML telah dirender oleh browser), jalankan fungsi berikut ini
+    // maksud nya adl ketika dokumen sudah siap (html telah d render oleh browser) maka jalankan fungsi berikut ini
     $(document).ready(function() {
       $('#form-login').validate({
         rules: {
