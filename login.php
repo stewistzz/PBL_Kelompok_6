@@ -25,12 +25,16 @@ ack">
 </head>
 
 <body class="hold-transition login-page">
+
   <div class="login-box">
+    <?php include('layouts/header.php'); ?>
     <!-- /.login-logo -->
-    <div class="card card-outline card-psrimary">
-      <div class="card-header text-center"><a href="/" class="h1"><b>Admin</b>LTE</a></div>
-      <div class="card-body">
+    <div class="card">
+      <div class="card-header text-center"><a href="/" class="h4"><b>Sistem Bebas Tanggungan</b></a>
+        <br>
         <p class="login-box-msg">Sign in to start your session</p>
+      </div>
+      <div class="card-body">
         <?php
         $status = $session->getFlash('status');
         if ($status === false) {
@@ -44,7 +48,7 @@ label="Close"><span aria-hidden="true">&times;</span></div>';
             <input type="text" class="form-control" name="username" placeholder="Username">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-user"></span>
+                <span class="fas fa-envelope"></span>
               </div>
             </div>
           </div>
