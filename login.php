@@ -22,6 +22,12 @@ ack">
   <link rel="stylesheet" href="adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
+  <style>
+    .card {
+      margin-top: 100px;
+      width: 40%;
+    }
+  </style>
 </head>
 
 <body class="hold-transition login-page">
@@ -29,7 +35,7 @@ ack">
   <div class="login-box">
     <!-- layouts header -->
     <?php include('layouts/header.php'); ?>
-    
+
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-header text-center"><a href="/" class="h4"><b>Sistem Bebas Tanggungan</b></a>
