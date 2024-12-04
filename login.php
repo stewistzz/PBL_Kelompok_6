@@ -27,7 +27,9 @@ ack">
 <body class="hold-transition login-page">
 
   <div class="login-box">
+    <!-- layouts header -->
     <?php include('layouts/header.php'); ?>
+    
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-header text-center"><a href="/" class="h4"><b>Sistem Bebas Tanggungan</b></a>
