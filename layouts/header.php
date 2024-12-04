@@ -32,7 +32,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><img src="img/logo_poltek.png" alt="" width="100px"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><img src="../assets/img/logo_poltek.png" alt="" width="100px"></i></a>
                 </li>
                 <li class="nav-item">
                     <p><br>JURUSAN <br> <b><u>TEKNOLOGI INFORMASI</u></b> <br> POLITEKNIK NEGERI MALANG</p>
