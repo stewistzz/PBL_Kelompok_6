@@ -40,7 +40,7 @@ ack">
     <div class="card">
       <div class="card-header text-center"><a href="/" class="h4"><b>Sistem Bebas Tanggungan</b></a>
         <br>
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg mt-2">Silahkan melakukan login terlebih dahulu</p>
       </div>
       <div class="card-body">
         <?php
@@ -73,12 +73,12 @@ label="Close"><span aria-hidden="true">&times;</span></div>';
             <div class="col-8">
               <div class="icheck-primary">
                 <input type="checkbox" id="remember">
-                <label for="remember">Remember Me</label>
+                <label for="remember">Ingat Saya</label>
               </div>
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
             </div>
             <!-- /.col -->
           </div>
