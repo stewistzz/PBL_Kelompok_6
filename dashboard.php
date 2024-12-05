@@ -51,8 +51,9 @@
         }
     </style>
 </head>
-<?php include('layouts/header.php'); ?>
+
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php include('layouts/header.php'); ?>
 <div class="wrapper">
 
     <!-- Main Sidebar Container -->

@@ -18,50 +18,22 @@
     <link rel="stylesheet" href="../adminlte/dist/css/adminlte.min.css">
 
     <!-- css folder assets -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- css folder login -->
-    <link rel="stylesheet" href="../assets/css/login/login.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
 
     <style>
-        .navbar-line {
-            width: 100%;
-            /* Lebar 100% */
-            height: 20px;
-            /* Tinggi garis 30px */
-            background-color: yellow;
-            /* Warna kuning */
-            position: absolute;
-            /* top: 60px; */
-            /* Posisi garis 30px di bawah navbar */
-            left: 0;
-            margin-top: 140px;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('assets/img/bg.jpeg');
-            /* Ganti dengan path gambar background kamu */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            /* Agar background tetap di tempat saat di-scroll */
-        }
-
-        body::before {
-            content: '';
-            /* Membuat elemen pseudo */
-            position: absolute;
-            /* Menempatkan overlay di atas background */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Hitam dengan 50% opacity */
-            z-index: -1;
-            /* Agar overlay berada di belakang konten utama */
-        }
+          .navbar-line {
+    width: 100%;
+    /* Lebar 100% */
+    height: 20px;
+    /* Tinggi garis 30px */
+    background-color: yellow;
+    /* Warna kuning */
+    position: absolute;
+    /* top: 60px; */
+    /* Posisi garis 30px di bawah navbar */
+    left: 0;
+    margin-top: 140px;
+}
         
     </style>
 </head>

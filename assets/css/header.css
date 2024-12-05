@@ -1,0 +1,35 @@
+.main-header {
+    background-color: #003366; /* Warna header */
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Pastikan header tetap di atas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .navbar {
+    margin-top: 100px; /* Beri jarak agar navbar berada di bawah header */
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  body {
+    padding-top: 150px; /* Jarak konten dari header */
+  }
+  
+  @media (max-width: 768px) {
+    .main-header p {
+      font-size: 12px; /* Perkecil font untuk tampilan kecil */
+    }
+  
+    body {
+      padding-top: 200px;
+    }
+  }
+
+  
