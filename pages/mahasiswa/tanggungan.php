@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,14 +27,9 @@
     <style>
         .navbar-line {
             width: 100%;
-            /* Lebar 100% */
             height: 20px;
-            /* Tinggi garis 30px */
             background-color: yellow;
-            /* Warna kuning */
             position: absolute;
-            /* top: 60px; */
-            /* Posisi garis 30px di bawah navbar */
             left: 0;
             margin-top: 140px;
         }
@@ -41,28 +38,21 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-image: url('assets/img/bg.jpeg');
-            /* Ganti dengan path gambar background kamu */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            /* Agar background tetap di tempat saat di-scroll */
         }
 
         body::before {
             content: '';
-            /* Membuat elemen pseudo */
             position: absolute;
-            /* Menempatkan overlay di atas background */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            /* Hitam dengan 50% opacity */
             z-index: -1;
-            /* Agar overlay berada di belakang konten utama */
         }
-
     </style>
 </head>
 
@@ -70,36 +60,30 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="navbar navbar-expand navbar-primary navbar-dark fixed-top">
-            <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><img src="assets/img/poltek.png" alt="" width="100px"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><img src="assets/img/poltek.png" alt="" width="100px"></a>
                 </li>
                 <li class="nav-item">
                     <p><br>JURUSAN <br> <b><u>TEKNOLOGI INFORMASI</u></b> <br> POLITEKNIK NEGERI MALANG</p>
                 </li>
             </ul>
 
-            <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><img src="assets/img/jti.png" alt="" width="80px"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><img src="assets/img/jti.png" alt="" width="80px"></a>
                 </li>
             </ul>
-            <!-- ./wrapper -->
-            <div class="navbar-line"></div>
         </nav>
 
-        <!-- Form Cek Status -->
-        <div class="container" style="margin-top: 120px;">
-            <h2>Cek Status Tanggungan</h2>
-            <!-- Form untuk Input Data Tanggungan -->
-            <form action="proses_tanggungan.php" method="POST">
-                <label for="nomor">Nomor Tanggungan:</label>
-                <input type="text" name="nomor" id="nomor" required>
-                <button type="submit" class="btn btn-primary">Cek Status</button>
-            </form>
+        <div class="navbar-line"></div>
+
+        <!-- Content of the page goes here -->
+        <div class="content">
+            <h1>Welcome to the Tanggungan Page</h1>
+            <p>This page displays additional content below the header.</p>
         </div>
+
     </div>
 
     <!-- jQuery -->

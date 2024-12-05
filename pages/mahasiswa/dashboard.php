@@ -3,26 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <!-- AdminLTE CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Dashboard Admin</title> 
+    <!-- Google Font: Source Sans Pro --> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="adminlte/plugins/datatablesbs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/datatablesresponsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/datatablesbuttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
+  <!-- jQuery -->
+  <script src="adminlte/plugins/jquery/jquery.min.js"></script> 
+  <style>
+        body {
+            background: url('../PBL_Kelompok_6/assets/img/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            font-family: 'Source Sans Pro', sans-serif;
+            position: relative;
+        }
+        body::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:azure (0.5);
+            z-index: -1; 
+        }
+        .sidebar{
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        .main-sidebar,
+        .content-wrapper {
+            margin-top: 140px; /* Jarak 200px dari header */
+        }
+        .sidebar .nav-link,
+        .sidebar .nav-link p {
+            font-size: 14px;
+            color: #000;
+        }
+        .table td{
+            text-align: center;
+        }
+    </style>
 </head>
+<?php include('layouts/header.php'); ?>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
+    <aside class="main-sidebar sidebar-blue-primary elevation-4">
+        <!-- Brand Logo -- >
         <a href="#" class="brand-link">
-            <img src="https://via.placeholder.com/150x50" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Dashboard Admin</span>
+            <img src="SIBETA.png" alt="Logo" class="brand-image img-rectangle elevation-3" style="width : 220px;">
+            <span class="brand-text font-weight-light">SiBeTa</span>
         </a>
 
-        <!-- Sidebar --> 
+        <!- Sidebar --> 
         <div class="sidebar">
             <!-- Sidebar Menu -->
             <nav class="mt-2">
@@ -74,8 +115,8 @@
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Jurusan Teknologi Informasi</h1>
+                    <div class="col-sm-12">
+                        <h1 class="text-center font-weight-bold">Sistem Bebas Tanggungan</h1>
                     </div>
                 </div>
             </div>
@@ -110,8 +151,14 @@
                                     <td>1</td>
                                     <td>2341760188</td>
                                     <td>Rahmalia Mutia Farda</td>
-                                    <td><span class="badge bg-success">Valid</span></td>
-                                    <td><span class="badge bg-success">Valid</span></td>
+                                    <td>
+                                        <span class="badge bg-success">Valid</span>
+                                        <i class="fas fa-eye"></i>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">Valid</span>
+                                        <i class="fas fa-eye"></i>
+                                    </td>
                                     <td><span class="badge bg-danger">Tidak Valid</span></td>
                                     <td><i class="fas fa-edit text-primary"></i></td>
                                     <td>14/06/2024 08:41:54</td>
@@ -139,9 +186,28 @@
     </div>
 </div>
 
-<!-- Bootstrap & AdminLTE JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery Validation -->
+  <script src="adminlte/plugins/jquery-validation/jquery.validate.min.js"></script>
+  <script src="adminlte/plugins/jquery-validation/additional-methods.min.js"></script>
+  <script src="adminlte/plugins/jquery-validation/localization/messages_id.min.js"></script>
+  <!-- DataTables & Plugins -->
+  <script src="adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="adminlte/plugins/datatablesresponsive/js/dataTables.responsive.min.js"></script>
+  <script src="adminlte/plugins/datatablesresponsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="adminlte/plugins/jszip/jszip.min.js"></script>
+  <script src="adminlte/plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="adminlte/plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="adminlte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="adminlte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="adminlte/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="adminlte/dist/js/demo.js"></script>
 </body>
 </html>
