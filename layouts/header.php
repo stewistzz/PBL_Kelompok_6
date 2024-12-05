@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="../adminlte/dist/css/adminlte.min.css">
 
     <!-- css folder assets -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- css folder login -->
-    <link rel="stylesheet" href="../assets/css/login/login.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
 
     <style>
         .navbar-line {
