@@ -16,19 +16,54 @@
   <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
   <!-- jQuery -->
   <script src="adminlte/plugins/jquery/jquery.min.js"></script> 
+  <style>
+        body {
+            background: url('../PBL_Kelompok_6/assets/img/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            font-family: 'Source Sans Pro', sans-serif;
+            position: relative;
+        }
+        body::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:azure (0.5);
+            z-index: -1; 
+        }
+        .sidebar{
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        .main-sidebar,
+        .content-wrapper {
+            margin-top: 140px; /* Jarak 200px dari header */
+        }
+        .sidebar .nav-link,
+        .sidebar .nav-link p {
+            font-size: 14px;
+            color: #000;
+        }
+        .table td{
+            text-align: center;
+        }
+    </style>
 </head>
+<?php include('layouts/header.php'); ?>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-blue-primary elevation-4">
-        <!-- Brand Logo -->
+        <!-- Brand Logo -- >
         <a href="#" class="brand-link">
-            <img src="SIBETA.png" alt="Logo" class="brand-image img-rectangle elevation-3" style="width : 220px; width: 220px;">
+            <img src="SIBETA.png" alt="Logo" class="brand-image img-rectangle elevation-3" style="width : 220px;">
             <span class="brand-text font-weight-light">SiBeTa</span>
         </a>
 
-        <!-- Sidebar --> 
+        <!- Sidebar --> 
         <div class="sidebar">
             <!-- Sidebar Menu -->
             <nav class="mt-2">
@@ -116,8 +151,14 @@
                                     <td>1</td>
                                     <td>2341760188</td>
                                     <td>Rahmalia Mutia Farda</td>
-                                    <td><span class="badge bg-success">Valid</span></td>
-                                    <td><span class="badge bg-success">Valid</span></td>
+                                    <td>
+                                        <span class="badge bg-success">Valid</span>
+                                        <i class="fas fa-eye"></i>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">Valid</span>
+                                        <i class="fas fa-eye"></i>
+                                    </td>
                                     <td><span class="badge bg-danger">Tidak Valid</span></td>
                                     <td><i class="fas fa-edit text-primary"></i></td>
                                     <td>14/06/2024 08:41:54</td>
