@@ -30,3 +30,4 @@ if ($act == 'login') {
     $session->deleteAll();
     header('Location: ../login.php', false);
 }
+?>
