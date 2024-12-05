@@ -22,7 +22,10 @@ ack">
   <link rel="stylesheet" href="adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
+
+  <!-- css for login -->
   <link rel="stylesheet" href="assets/css/login.css">
+
 </head>
 
 <body class="hold-transition login-page">
