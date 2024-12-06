@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +16,7 @@
     <link rel="stylesheet" href="../adminlte/plugins/fontawesome-free/css/all.min.css">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="../adminlte/plugins/sweetalert2/sweetalert2.min.css">
-    <!-- Toastr -->
+    <!-- Toastr --> 
     <link rel="stylesheet" href="../adminlte/plugins/toastr/toastr.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../adminlte/dist/css/adminlte.min.css">
