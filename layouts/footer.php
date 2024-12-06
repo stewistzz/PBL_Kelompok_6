@@ -1,8 +1,9 @@
 <!-- footer -->
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+      <b>Project Base Learning</b> Bebas Tanggungan.
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+    <strong>Copyright &copy; 2024 <a href="#">Kelompok 6 Project</a>.</strong> All rights reserved.
+</footer>
+
 <!-- footer -->
