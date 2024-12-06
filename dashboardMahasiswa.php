@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin</title>
+    <title>Dashboard Mahasiswa</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="assets/css/dashboardMahasiswa.css">
+    <link rel="stylesheet" href="assets/css/dashboardAdmin.css">
     <!-- jQuery -->
     <script src="adminlte/plugins/jquery/jquery.min.js"></script>
     <style>
@@ -37,8 +37,6 @@
     <!-- Content Wrapper -->
     <div class="content-wrapper">
 
-        <!-- Tombol Toggle Sidebar -->
-
         <!-- Content Header -->
         <section class="content-header">
             <!-- toggle -->
@@ -47,21 +45,70 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-12">
-                        <h1 class="text-center font-weight-bold">Sistem Bebas Tanggungan</h1>
+                        <tr>
+                            <th scope="col">Annisa</th>
+                            <th scope="col">/</th>
+                            <th scope="col">2341760032</th>
+                        </tr>
+                        <h4 class="text-left font-weight">Riwayat Tanggungan Mahasiswa</h4>
+                        
                     </div>
                 </div>
             </div>
         </section>
+        <tbody>
 
-        <!-- Main Content -->
-        <?php include('pages/mahasiswa/index.php'); ?>
-    </div>
-    <!-- footer -->
-    <?php include('layouts/footer.php'); ?>
+            <!-- Main Content -->
+            <section class="content">
+                <div class="page-inner">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="list-group">
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            Pembayaran UKT
+                                            <span class="badge badge-success">Sudah Terbayarkan</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            Laporan Tugas Akhir / Skripsi
+                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            Surat Bebas Kompen
+                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            Surat Bebas Peminjaman
+                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            Sertifikat TOEIC
+                                            <span class="badge badge-danger">Belum Terpenuhi</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            SKKM
+                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </tbody>
+        </div>
+
+        <!-- footer -->
+        <?php include('layouts/footer.php'); ?>
     </div>
 
     <!-- Bootstrap 4 -->
     <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="adminlte/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery Validation -->
     <script src="adminlte/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script src="adminlte/plugins/jquery-validation/additional-methods.min.js"></script>
@@ -83,10 +130,8 @@
     <script src="adminlte/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="adminlte/dist/js/demo.js"></script>
-
     <!-- sidebar toggle -->
     <script src="assets/js/sidebarToggle.js"></script>
-
 </body>
 
 </html>

@@ -54,7 +54,7 @@
         </section>
 
         <!-- Main Content -->
-        <?php include('pages/mahasiswa/index.php'); ?>
+        <?php include('pages/admin/index.php'); ?>
     </div>
     <!-- footer -->
     <?php include('layouts/footer.php'); ?>

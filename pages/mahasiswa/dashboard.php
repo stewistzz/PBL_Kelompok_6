@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin</title> 
-    <!-- Google Font: Source Sans Pro --> 
+    <title>Dashboard Admin</title>
+    <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
   <!-- jQuery -->
-  <script src="adminlte/plugins/jquery/jquery.min.js"></script> 
+  <script src="adminlte/plugins/jquery/jquery.min.js"></script>
   <style>
         body {
             background: url('../PBL_Kelompok_6/assets/img/bg.jpeg') no-repeat center center fixed;
@@ -32,7 +32,7 @@
             width: 100%;
             height: 100%;
             background-color:azure (0.5);
-            z-index: -1; 
+            z-index: -1;
         }
         .sidebar{
             background-color: rgba(255, 255, 255, 0.6);
