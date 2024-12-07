@@ -15,41 +15,60 @@
     <h3>Admin view</h3>
 </div>
 <section class="content">
-                <div class="page-inner">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="list-group">
-                                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                                            Pembayaran UKT
-                                            <span class="badge badge-success">Sudah Terbayarkan</span>
-                                        </div>
-                                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                                            Laporan Tugas Akhir / Skripsi
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </div>
-                                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                                            Surat Bebas Kompen
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </div>
-                                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                                            Surat Bebas Peminjaman
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </div>
-                                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                                            Sertifikat TOEIC
-                                            <span class="badge badge-danger">Belum Terpenuhi</span>
-                                        </div>
-                                        <div class="list-group-item d-flex justify-content-between align-items-center">
-                                            SKKM
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </div>
-                                    </div>
+    <div class="page-inner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="list-group">
+                                <!-- Judul kolom -->
+                            <div class="list-group-item d-flex justify-content-between align-items-center font-weight-bold">
+                                <div class="w-50">Dokumen</div>
+                                <div>Status</div>
+                                <div class="w-25">Keterangan</div>
+                            </div>
+                            <!-- Isi data -->
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="w-50">Pembayaran UKT</div>
+                                    <button class="btn btn-danger btn-sm">Belum Terbayarkan</button>
+                                    <input type="text" class="form-control form-control-sm w-25" placeholder="Keterangan">
+                                </div>
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="w-50">Laporan Tugas Akhir / Skripsi</div>
+                                    <button class="btn btn-success btn-sm">Sudah Terpenuhi</button>
+                                    <input type="text" class="form-control form-control-sm w-25" placeholder="Keterangan">
+                                </div>
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="w-50">Surat Bebas Kompen</div>
+                                    <button class="btn btn-success btn-sm">Sudah Terpenuhi</button>
+                                    <input type="text" class="form-control form-control-sm w-25" placeholder="Keterangan">
+                                </div>
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="w-50">Surat Bebas Peminjaman</div>
+                                    <button class="btn btn-success btn-sm">Sudah Terpenuhi</button>
+                                    <input type="text" class="form-control form-control-sm w-25" placeholder="Keterangan">
+                                </div>
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="w-50">Sertifikat TOEIC</div>
+                                    <button class="btn btn-danger btn-sm">Belum Terpenuhi</button>
+                                    <input type="text" class="form-control form-control-sm w-25" placeholder="Keterangan">
+                                </div>
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="w-50">SKKM</div>
+                                    <button class="btn btn-success btn-sm">Sudah Terpenuhi</button>
+                                    <input type="text" class="form-control form-control-sm w-25" placeholder="Keterangan">
                                 </div>
                             </div>
                         </div>
+                    <div class="card-footer text-center">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-save"></i> Simpan
+                            </button>
+                        </div>    
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </div>
+</section>
