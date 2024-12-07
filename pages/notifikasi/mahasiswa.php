@@ -17,7 +17,7 @@
     
     <!-- Menambahkan Gambar Dosen -->
     <div class="dosen-image">
-        <img src="pages/notifikasi/image/dosenn.jpg" alt="Dosen" class="img-fluid" style="max-width: 200px; margin: 10px auto; display: block;">
+        <img src="assets/img/dosen.jpg" alt="Dosen" class="img-fluid" style="max-width: 200px; margin: 10px auto; display: block;">
     </div>
 
     <div class="notification-list">
