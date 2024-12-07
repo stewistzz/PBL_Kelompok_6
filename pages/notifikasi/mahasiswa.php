@@ -14,6 +14,7 @@
 <!-- Notifikasi Mahasiswa -->
 <section class="notifications">
     <h3>Notif Mahasiswa</h3>
+    
     <!-- Menambahkan Gambar Dosen -->
     <div class="dosen-image">
         <img src="pages/notifikasi/image/dosenn.jpg" alt="Dosen" class="img-fluid" style="max-width: 200px; margin: 10px auto; display: block;">
@@ -21,6 +22,7 @@
 
     <div class="notification-list">
         <div class="notification">
+            <!-- Gambar Profil Admin -->
             <img src="avatar.png" alt="Admin" class="avatar">
             <div class="text">
                 <h4>Admin</h4>
