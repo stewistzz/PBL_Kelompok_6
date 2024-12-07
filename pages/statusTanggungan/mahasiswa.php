@@ -15,8 +15,6 @@
 <div class="header">
     <h3>Mahasiswa view</h3>
 </div>
-
-
 <section class="content">
                 <div class="page-inner">
                 <div class="container-fluid">
@@ -25,31 +23,50 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="list-group">
+                                        <!-- Judul kolom -->
+                                        <div class="list-group-item d-flex justify-content-between align-items-center font-weight-bold">
+                                            <div class="w-50">Dokumen</div>
+                                            <div class="w-25 text-center">Keterangan</div>
+                                            <div class="w-25 text-center">Status</div>
+                                        </div>
+                                        <!-- Isi data -->
                                         <div class="list-group-item d-flex justify-content-between align-items-center">
                                             Pembayaran UKT
-                                            <span class="badge badge-success">Sudah Terbayarkan</span>
+                                            <button class="btn btn-success btn-sm ml-auto">Sudah Terbayarkan</button>
                                         </div>
                                         <div class="list-group-item d-flex justify-content-between align-items-center">
                                             Laporan Tugas Akhir / Skripsi
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                            <button class="btn btn-success btn-sm ml-auto">Sudah Terpenuhi</button>
                                         </div>
                                         <div class="list-group-item d-flex justify-content-between align-items-center">
                                             Surat Bebas Kompen
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                            <button class="btn btn-success btn-sm ml-auto">Sudah Terpenuhi</button>
                                         </div>
                                         <div class="list-group-item d-flex justify-content-between align-items-center">
                                             Surat Bebas Peminjaman
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                            <button class="btn btn-success btn-sm ml-auto">Sudah Terpenuhi</button>
                                         </div>
                                         <div class="list-group-item d-flex justify-content-between align-items-center">
                                             Sertifikat TOEIC
-                                            <span class="badge badge-danger">Belum Terpenuhi</span>
+                                            <div class="d-flex align-items-center justify-content-center w-75">
+                                                <span class="text-danger text-center w-100">
+                                                    Skor anda tidak memenuhi syarat
+                                                </span>
+                                                <button class="btn btn-danger btn-sm ml-auto">
+                                                    Belum Terpenuhi
+                                                </button>
+                                            </div>
                                         </div>
                                         <div class="list-group-item d-flex justify-content-between align-items-center">
                                             SKKM
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
+                                            <button class="btn btn-success btn-sm ml-auto">Sudah Terpenuhi</button>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-print"></i> Cetak Surat Keterangan
+                                    </button>
                                 </div>
                             </div>
                         </div>
