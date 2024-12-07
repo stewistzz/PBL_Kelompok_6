@@ -152,17 +152,54 @@
                                     <td>2341760188</td>
                                     <td>Rahmalia Mutia Farda</td>
                                     <td>
-                                        <span class="badge bg-success">Valid</span>
+                                        <div class="btn-group">
+                                        <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                                            Valid
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Valid</a>
+                                            <a class="dropdown-item" href="#">Tidak Valid</a>
+                                        </div>
+                                        </div>
+                                            <i class="fas fa-eye"></i>
+                                    </td>
+                                    <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                                            Valid
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Valid</a>
+                                            <a class="dropdown-item" href="#">Tidak Valid</a>
+                                        </div>
+                                    </div>
                                         <i class="fas fa-eye"></i>
                                     </td>
                                     <td>
-                                        <span class="badge bg-success">Valid</span>
-                                        <i class="fas fa-eye"></i>
+                                        <div class="btn-group">
+                                        <button class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown">
+                                            Tidak Valid
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Valid</a>
+                                            <a class="dropdown-item" href="#">Tidak Valid</a>
+                                        </div>
+                                        </div>
                                     </td>
-                                    <td><span class="badge bg-danger">Tidak Valid</span></td>
                                     <td><i class="fas fa-edit text-primary"></i></td>
                                     <td>14/06/2024 08:41:54</td>
-                                    <td><span class="badge bg-warning">Menunggu Verifikasi</span></td>
+                                    <td>
+                                        <div class="btn-group">
+                                    <button class="btn bg-warning btn-sm dropdown-toggle" data-toggle="dropdown">
+                                        Menunggu Verifikasi
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Valid</a>
+                                        <a class="dropdown-item" href="#">Tidak Valid</a>
+                                        <a class="dropdown-item" href="#">Menunggu Verifikasi</a>
+                                    </div>
+                                </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
