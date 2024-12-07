@@ -11,9 +11,6 @@
                  </div>
              </section>
 
-<div class="header">
-    <h3>Admin view</h3>
-</div>
 <section class="content">
     <div class="page-inner">
         <div class="container-fluid">
