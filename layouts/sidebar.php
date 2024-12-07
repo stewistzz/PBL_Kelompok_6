@@ -35,6 +35,15 @@ $role = $_SESSION['role'];
                         <p>Beranda</p>
                     </a>
                 </li>
+                <!-- add new template surat -->
+                <li class="nav-item 
+                    <?= $role != 'Mahasiswa' ? ' d-none' : ''?>
+                ">
+                    <a href="<?= 'template_surat.php'?>" class="nav-link">
+                    <i class="nav-icon fa fa-arrow-down"></i>
+                        <p>Template Surat</p>
+                    </a>
+                </li>
                 <li class="nav-item 
                     <?= $role != 'Mahasiswa' ? ' d-none' : ''?>
                 ">
@@ -57,6 +66,7 @@ $role = $_SESSION['role'];
                         <p>Cek Status Tanggungan</p>
                     </a>
                 </li>
+                <!-- cetak bebas tanggungan -->
                 <li class="nav-item
                 <?= $role != 'Mahasiswa' ? ' d-none' : ''?>
                 ">
@@ -78,6 +88,26 @@ $role = $_SESSION['role'];
                         <p>Notifikasi</p>
                     </a>
                 </li>
+                <!-- add crud admin -->
+                <li class="nav-item
+                <?= $role != 'Admin' ? ' d-none' : ''?>
+                ">
+                    <a href="<?= 'modifDataMhs.php'?>" class="nav-link">
+                    <i class="nav-icon fa fa-user-plus"></i>
+                        <p>Tambah Mahasiswa</p>
+                    </a>
+                </li>
+
+                <!-- add crud mahasiswa -->
+                <li class="nav-item
+                <?= $role != 'Admin' ? ' d-none' : ''?>
+                ">
+                    <a href="<?= 'modifDataAdmin.php'?>" class="nav-link">
+                    <i class="nav-icon fa fa-user-plus"></i>
+                        <p>Tambah Admin</p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                 <form action="action/auth.php?act=logout" method="post" id="form-login">
                     <button type="submit" class="nav-link">
