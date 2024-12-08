@@ -26,4 +26,4 @@
 <hr>
 
 <!-- Notifikasi Mahasiswa -->
-<?php include('components/detail.php')?>
+<?php include('components/notifikasi/detail.php')?>

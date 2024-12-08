@@ -2,7 +2,7 @@
 <?php
 $role = $_SESSION['role'];
 // print_r($_SESSION['role']);
-
+include "pages/profile/profile.php";
 ?>
 <link rel="stylesheet" href="../assets/css/dashboardAdmin.css">
 
@@ -15,7 +15,11 @@ $role = $_SESSION['role'];
                 <img src="adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileModal">
+            View Profile
+        </button> -->
+                <a href="#" data-toggle="modal" data-target="#profileModal" class="d-block">Alexander Pierce</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -75,15 +79,14 @@ $role = $_SESSION['role'];
                         <p>Cetak Bebas Tanggungan</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item 
+                <?= $role != 'Mahasiswa' ? ' d-none' : ''?>">    
                     <a href="
-                    <?php 
-                        if ($role == 'Mahasiswa') {
+                    <?php
                             echo 'notifikasiMahasiswa.php';
-                        } else {
-                            echo 'notifikasiAdmin.php';
-                        }
-                    ?>" class="nav-link">
+                        
+                    ?>
+                    " class="nav-link">
                         <i class="nav-icon fas fa-bell"></i>
                         <p>Notifikasi</p>
                     </a>
