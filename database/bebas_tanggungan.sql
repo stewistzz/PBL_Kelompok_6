@@ -1,6 +1,6 @@
-create database bebas_tanggungan;
+create database bebas_tanggungan_pbl;
 
-use bebas_tanggungan;
+use bebas_tanggungan_pbl;
 
 -- Tabel Mahasiswa
 CREATE TABLE Mahasiswa (
@@ -28,21 +28,12 @@ CREATE TABLE BebasTanggungan (
     FOREIGN KEY (admin_id) REFERENCES Admin(admin_id)
 );
 
--- Tabel Dokumen
-CREATE TABLE Dokumen (
-    dokumen_id INT PRIMARY KEY IDENTITY(1,1),
-    bt_id INT NOT NULL,
-    nama_dokumen VARCHAR(255) NOT NULL,
-    path VARCHAR(500) NOT NULL,
-    laporan_ta_path VARCHAR(500),
-    program_ta_path VARCHAR(500),
-    surat_publikasi_path VARCHAR(500),
-    tanda_terima_ta_path VARCHAR(500),
-    tanda_terima_pkl_path VARCHAR(500),
-    surat_bebas_kompen_path VARCHAR(500),
-    toeic_scan_path VARCHAR(500),
-    FOREIGN KEY (bt_id) REFERENCES BebasTanggungan(bt_id)
+-- Tabel Kategori Dokumen
+CREATE TABLE KategoriDokumen (
+    kategori_id INT PRIMARY KEY IDENTITY(1,1),
+    nama_kategori VARCHAR(255) NOT NULL
 );
+
 
 -- Tabel Admin
 CREATE TABLE Admin (
@@ -59,6 +50,9 @@ CREATE TABLE Account (
     account_id INT PRIMARY KEY IDENTITY(1,1),
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role_name VARCHAR(50) NOT NULL
+    role_name VARCHAR(50) NOT NULL
 );
-A
+
+ALTER TABLE BebasTanggungan
+ADD file_name VARCHAR(255);
+
