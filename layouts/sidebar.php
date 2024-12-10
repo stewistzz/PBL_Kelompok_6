@@ -1,6 +1,7 @@
-
 <?php
+
 $role = $_SESSION['role'];
+$username = $_SESSION['username'];
 // print_r($_SESSION['role']);
 include "pages/profile/profile.php";
 ?>
@@ -19,7 +20,7 @@ include "pages/profile/profile.php";
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileModal">
             View Profile
         </button> -->
-                <a href="#" data-toggle="modal" data-target="#profileModal" class="d-block">Alexander Pierce</a>
+                <a href="#" data-toggle="modal" data-target="#profileModal" class="d-block"><?= $username ?></a>
             </div>
         </div>
         <!-- Sidebar Menu -->

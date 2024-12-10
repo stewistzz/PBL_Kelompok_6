@@ -1,10 +1,11 @@
 <?php
-$use_driver = 'sqlsrv'; // mysql atau sqlsrv
+$use_driver = 'sqlsrv'; // Pilih driver (sqlsrv atau mysql)
 $host = 'localhost';
-$username = ''; //'sa';
-$password = '';
+$username = ''; // Masukkan username untuk SQL Server atau MySQL
+$password = ''; // Masukkan password untuk SQL Server atau MySQL
 $database = 'bebas_tanggungan';
 $db;
+
 if ($use_driver == 'mysql') {
     try {
         $db = new mysqli('localhost', $username, $password, $database);
@@ -30,3 +31,5 @@ if ($use_driver == 'mysql') {
         die($e->getMessage());
     }
 }
+?>
+
