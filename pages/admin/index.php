@@ -1,6 +1,8 @@
 <?php
 include('lib/Connection.php');
 
+// add data mahasiswa
+
 // menghitung jumlah mahasiswa
 $queryMahasiswa = "SELECT COUNT(*) AS total_mahasiswa FROM Mahasiswa";
 $resultMahasiswa = sqlsrv_query($db, $queryMahasiswa);
@@ -18,6 +20,27 @@ if ($resultAdmin !== false && $row = sqlsrv_fetch_array($resultAdmin, SQLSRV_FET
 }
 
 // query untuk menampilkan jumlah data terverifikasi
+$queryBebasTanggungan = "
+    SELECT 
+        b.bt_id, 
+        m.nim, 
+        m.nama, 
+        b.tanggal_pengajuan, 
+        k.jenis_dokumen
+    FROM BebasTanggungan b
+    JOIN Mahasiswa m ON b.mahasiswa_id = m.mahasiswa_id
+    JOIN KategoriDokumen k ON b.kategori_id = k.kategoriDok_id
+    ORDER BY b.tanggal_pengajuan DESC
+";
+
+
+$resultBebasTanggungan = sqlsrv_query($db, $queryBebasTanggungan);
+$dataBebasTanggungan = [];
+if ($resultBebasTanggungan !== false) {
+    while ($row = sqlsrv_fetch_array($resultBebasTanggungan, SQLSRV_FETCH_ASSOC)) {
+        $dataBebasTanggungan[] = $row;
+    }
+}
 // command
 
 // Menutup koneksi
@@ -85,47 +108,28 @@ sqlsrv_close($db);
                             <th>No</th>
                             <th>NIM</th>
                             <th>Nama Mahasiswa</th>
-                            <th>Status Foto</th>
-                            <th>Status UKT</th>
-                            <th>Status SKKM</th>
-                            <th>File</th>
-                            <th>Waktu Pengajuan</th>
-                            <th>Status</th>
+                            <th>Jenis Dokumen</th>
+                            <th>Tanggal Pengajuan</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2341760188</td>
-                            <td>Rahmalia Mutia Farda</td>
-                            <td>
-                                <span class="badge bg-success">Valid</span>
-                                <i class="fas fa-eye"></i>
-                            </td>
-                            <td>
-                                <span class="badge bg-success">Valid</span>
-                                <i class="fas fa-eye"></i>
-                            </td>
-                            <td><span class="badge bg-danger">Tidak Valid</span></td>
-                            <td><i class="fas fa-edit text-primary"></i></td>
-                            <td>14/06/2024 08:41:54</td>
-                            <td><span class="badge bg-warning">Menunggu Verifikasi</span></td>
-                        </tr>
+                        <?php if (!empty($dataBebasTanggungan)) : ?>
+                            <?php foreach ($dataBebasTanggungan as $index => $data) : ?>
+                                <tr>
+                                    <td><?php echo $index + 1; ?></td>
+                                    <td><?php echo htmlspecialchars($data['nim']); ?></td>
+                                    <td><?php echo htmlspecialchars($data['nama']); ?></td>
+                                    <td><?php echo htmlspecialchars($data['jenis_dokumen']); ?></td>
+                                    <td><?php echo htmlspecialchars($data['tanggal_pengajuan']->format('Y-m-d')); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <tr>
+                                <td colspan="4" class="text-center">Tidak ada data pengajuan</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
-
-                <div class="d-flex justify-content-between mt-3">
-                    <span>Menampilkan 1 dari 280 data</span>
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Sebelum</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Selanjutnya</a></li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
         </div>
     </div>
