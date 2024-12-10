@@ -1,3 +1,46 @@
+<?php
+include('lib/Connection.php');
+
+// Mulai session
+// session_start();
+
+
+
+// Ambil account_id dari session
+$account_id = $_SESSION['account_id'];
+
+// Query untuk mendapatkan data pengguna berdasarkan account_id
+try {
+    $sql = "SELECT A.username, A.role_name, 
+                   CASE 
+                       WHEN A.role_name = 'Mahasiswa' THEN M.nama 
+                       WHEN A.role_name = 'Admin' THEN AD.nama 
+                   END AS full_name
+            FROM Account A
+            LEFT JOIN Mahasiswa M ON A.account_id = M.account_id
+            LEFT JOIN Admin AD ON A.account_id = AD.account_id
+            WHERE A.account_id = ?";
+    $params = [$account_id];
+    $query = sqlsrv_query($db, $sql, $params);
+
+    if ($query === false) {
+        throw new Exception('Error executing query: ' . print_r(sqlsrv_errors(), true));
+    }
+
+    $userData = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
+    if (!$userData) {
+        throw new Exception('User data not found.');
+    }
+
+    $fullName = $userData['full_name'];
+    $username = $userData['username'];
+    $role = $userData['role_name'];
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,18 +97,15 @@
                     <form id="profileForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" class="form-control" id="name" value="John Doe">
+                            <input type="text" class="form-control" id="name" value="<?= htmlspecialchars($fullName) ?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" value="johndoe">
+                            <input type="text" class="form-control" id="username" value="<?= htmlspecialchars($username) ?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <select class="form-control" id="role">
-                                <option value="mahasiswa" selected>Mahasiswa</option>
-                                <option value="admin">Admin</option>
-                            </select>
+                            <input type="text" class="form-control" id="role" value="<?= htmlspecialchars($role) ?>" readonly>
                         </div>
                     </form>
                 </div>
@@ -73,7 +113,6 @@
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
                 </div>
             </div>
         </div>
@@ -83,16 +122,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        // Example: Simulating save changes action
-        document.getElementById('saveChanges').addEventListener('click', function() {
-            const name = document.getElementById('name').value;
-            const username = document.getElementById('username').value;
-            const role = document.getElementById('role').value;
-
-            alert(`Profile updated!\nName: ${name}\nUsername: ${username}\nRole: ${role}`);
-        });
-    </script>
 </body>
 </html>
