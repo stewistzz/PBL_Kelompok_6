@@ -2,7 +2,7 @@ create database bebas_tanggungan_pbl;
 
 use bebas_tanggungan_pbl;
 
--- Tabel Mahasiswa
+-- Tabel Mahasiswa 
 CREATE TABLE Mahasiswa (
     mahasiswa_id INT PRIMARY KEY IDENTITY(1,1),
     nama VARCHAR(255) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE Account (
     account_id INT PRIMARY KEY IDENTITY(1,1),
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role_name VARCHAR(50) NOT NULL
+    role_name VARCHAR(50) NOT NULL
 );
 
 ALTER TABLE BebasTanggungan
