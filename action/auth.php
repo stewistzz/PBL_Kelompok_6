@@ -23,32 +23,52 @@ if ($act == 'login') {
         // Ambil data dari hasil query
         if ($row = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)) {
             // Verifikasi password
-            // if (password_verify($password, $row['password'])) {
-            if ($password == $row['password']) {
-                // Simpan informasi ke dalam session
+            if ($password == $row['password']) { // Gunakan password_hash/password_verify untuk keamanan lebih baik
+                // Simpan informasi dasar ke dalam session
                 $_SESSION['is_login'] = true;
                 $_SESSION['username'] = $row['username'];
-                $_SESSION['role'] = $row['role_name']; // Tambahkan role ke session
+                $_SESSION['role'] = $row['role_name'];
 
-                // Redirect berdasarkan role
+                // Query tambahan untuk mendapatkan account_id dari Mahasiswa atau Admin
                 if ($row['role_name'] === 'Admin') {
-                    header('Location: ../dashboardAdmin.php');
+                    $adminQuery = "SELECT admin_id, account_id FROM Admin WHERE account_id = ?";
+                    $adminParams = [$row['account_id']];
+                    $adminResult = sqlsrv_query($db, $adminQuery, $adminParams);
+
+                    if ($adminData = sqlsrv_fetch_array($adminResult, SQLSRV_FETCH_ASSOC)) {
+                        $_SESSION['account_id'] = $adminData['account_id'];
+                        $_SESSION['user_id'] = $adminData['admin_id']; // Simpan ID spesifik admin
+                        header('Location: ../dashboardAdmin.php');
+                        exit();
+                    }
                 } elseif ($row['role_name'] === 'Mahasiswa') {
-                    header('Location: ../dashboardMahasiswa.php');
+                    $studentQuery = "SELECT mahasiswa_id, account_id FROM Mahasiswa WHERE account_id = ?";
+                    $studentParams = [$row['account_id']];
+                    $studentResult = sqlsrv_query($db, $studentQuery, $studentParams);
+
+                    if ($studentData = sqlsrv_fetch_array($studentResult, SQLSRV_FETCH_ASSOC)) {
+                        $_SESSION['account_id'] = $studentData['account_id'];
+                        $_SESSION['user_id'] = $studentData['mahasiswa_id']; // Simpan ID spesifik mahasiswa
+                        header('Location: ../dashboardMahasiswa.php');
+                        exit();
+                    }
                 } else {
                     $_SESSION['flash_status'] = false;
                     $_SESSION['flash_message'] = 'Role tidak dikenali.';
                     header('Location: ../index.php');
+                    exit();
                 }
             } else {
                 $_SESSION['flash_status'] = false;
                 $_SESSION['flash_message'] = 'Username atau password salah.';
                 header('Location: ../index.php');
+                exit();
             }
         } else {
             $_SESSION['flash_status'] = false;
             $_SESSION['flash_message'] = 'Username tidak ditemukan.';
             header('Location: ../index.php');
+            exit();
         }
 
         sqlsrv_free_stmt($query);
@@ -57,11 +77,13 @@ if ($act == 'login') {
         $_SESSION['flash_status'] = false;
         $_SESSION['flash_message'] = 'Terjadi kesalahan: ' . $e->getMessage();
         header('Location: ../index.php');
+        exit();
     }
 } elseif ($act == 'logout') {
     // Hapus semua data session
     session_unset();
     session_destroy();
     header('Location: ../index.php');
+    exit();
 }
 ?>
