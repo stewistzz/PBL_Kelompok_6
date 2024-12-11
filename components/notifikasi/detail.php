@@ -3,7 +3,10 @@
 include('lib/Connection.php'); // Sesuaikan path dengan file Connection.php Anda
 
 // Query untuk mendapatkan data nama admin dan catatan
-$query = "SELECT nama_admin, detail_catatan FROM bebas_tanggungan";
+$query = "
+    SELECT Admin.nama AS nama_admin, BebasTanggungan.catatan 
+    FROM BebasTanggungan
+    JOIN Admin ON BebasTanggungan.admin_id = Admin.admin_id";
 $result = null;
 
 if ($use_driver == 'mysql') {
@@ -19,7 +22,7 @@ if ($result && (($use_driver == 'mysql' && $result->num_rows > 0) || ($use_drive
         <ul class="list-group">
             <?php while ($row = ($use_driver == 'mysql') ? $result->fetch_assoc() : sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)): ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <span><strong><?= htmlspecialchars($row['nama_admin']) ?>:</strong> <?= htmlspecialchars(substr($row['detail_catatan'], 0, 50)) ?>...</span>
+                    <span><strong><?= htmlspecialchars($row['nama_admin']) ?>:</strong> <?= htmlspecialchars(substr($row['catatan'], 0, 50)) ?>...</span>
                     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal<?= htmlspecialchars($row['nama_admin']) ?>">Lihat Detail</button>
                 </li>
 
@@ -33,7 +36,7 @@ if ($result && (($use_driver == 'mysql' && $result->num_rows > 0) || ($use_drive
                             </div>
                             <div class="modal-body">
                                 <p><strong>Admin:</strong> <?= htmlspecialchars($row['nama_admin']) ?></p>
-                                <p><?= htmlspecialchars($row['detail_catatan']) ?></p>
+                                <p><?= htmlspecialchars($row['catatan']) ?></p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
