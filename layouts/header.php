@@ -10,20 +10,19 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Navbar & Tabs</title>
 
-    <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
+    
     <link rel="stylesheet" href="../adminlte/plugins/fontawesome-free/css/all.min.css">
-    <!-- SweetAlert2 -->
+    
     <link rel="stylesheet" href="../adminlte/plugins/sweetalert2/sweetalert2.min.css">
-    <!-- Toastr --> 
+    
     <link rel="stylesheet" href="../adminlte/plugins/toastr/toastr.min.css">
-    <!-- Theme style -->
+    
     <link rel="stylesheet" href="../adminlte/dist/css/adminlte.min.css">
 
-    <!-- css folder assets -->
+    
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- css folder login -->
+    
     <link rel="stylesheet" href="../assets/css/header.css">
 
     <style>
@@ -73,13 +72,13 @@ session_start();
         <!-- /.navbar -->
     </div>
     </div>
-    <!-- jQuery -->
+    
     <script src="../adminlte/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
+    
     <script src="../adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
+    
     <script src="../adminlte/dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
+    
     <script src="../adminlte/dist/js/demo.js"></script>
 </body>
 
