@@ -92,6 +92,15 @@ include "pages/profile/profile.php";
                         <p>Notifikasi</p>
                     </a>
                 </li>
+                <!-- add crud akun -->
+                <li class="nav-item
+                <?= $role != 'Admin' ? ' d-none' : ''?>
+                ">
+                    <a href="<?= 'modifAkun.php'?>" class="nav-link">
+                    <i class="nav-icon fa fa-user-plus"></i>
+                        <p>Tambah Akun</p>
+                    </a>
+                </li>
                 <!-- add crud admin -->
                 <li class="nav-item
                 <?= $role != 'Admin' ? ' d-none' : ''?>
