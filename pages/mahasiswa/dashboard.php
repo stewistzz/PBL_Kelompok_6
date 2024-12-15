@@ -62,20 +62,32 @@ try {
     die();
 }
 ?>
-    <!-- Content Header -->
-    <section class="content-header">
+
+<!-- Content Header -->
+<style>
+    .jumbotron {
+        background: linear-gradient(135deg, #0056b3, #003366);
+        border-radius: 15px;
+        color: #fff;
+    }
+</style>
+
+
+<section class="content-header">
     <div class="container-fluid">
         <div class="row mb-4">
             <!-- Header Section -->
             <div class="col-12">
-                <div class="jumbotron bg-light text-center shadow-sm">
-                    <h2 class="display-6 text-primary"><b>Riwayat Bebas Tanggungan</b></h2>
-                    <p class="lead text-secondary">Data dummy</p>
+                <div class="jumbotron bg-dark text-center shadow-sm">
+                    <h2 class="display-6"><b>Dashboard Mahasiswa</b></h2>
+                    <p class="lead">Pastikan data yang anda kirimkan telah benar dan sesuai.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<hr>
+
 
     <!-- Main Content -->
     <section class="content">

@@ -1,17 +1,30 @@
 <!-- Content Header -->
+<style>
+    .jumbotron {
+        background: linear-gradient(135deg, #0056b3, #003366);
+        border-radius: 15px;
+        color: #fff;
+    }
+    .card-header h5 {
+        font-weight: 600;
+    }
+</style>
+
+
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-4">
             <!-- Header Section -->
             <div class="col-12">
-                <div class="jumbotron bg-light text-center shadow-sm">
-                    <h2 class="display-6 text-primary">Upload Dokumen</h2>
-                    <p class="lead text-secondary">Pastikan semua file yang diunggah sesuai dengan format dan persyaratan yang berlaku.</p>
+                <div class="jumbotron bg-dark text-center shadow-sm">
+                    <h2 class="display-6"><b>Upload Dokumen</b></h2>
+                    <p class="lead">Pastikan semua file yang diunggah sesuai dengan format dan persyaratan yang berlaku.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<hr>
 
 <!-- Main Content -->
 <section class="content">
@@ -20,7 +33,7 @@
             <!-- Reusable Upload Card -->
             <div class="col-md-4">
                 <div class="card shadow-lg border-0">
-                    <div class="card-header bg-gradient-primary text-white text-center">
+                    <div class="card-header text-dark text-center">
                         <h5 class="card-title mb-0">Laporan Tugas Akhir / Skripsi</h5>
                     </div>
                     <div class="card-body">
@@ -41,7 +54,7 @@
             <!-- Surat Bebas Kompen -->
             <div class="col-md-4">
                 <div class="card shadow-lg border-0">
-                    <div class="card-header bg-gradient-primary text-white text-center">
+                    <div class="card-header text-dark text-center">
                         <h5 class="card-title mb-0">Surat Bebas Kompen</h5>
                     </div>
                     <div class="card-body">
@@ -62,7 +75,7 @@
             <!-- Surat Bebas Peminjaman -->
             <div class="col-md-4">
                 <div class="card shadow-lg border-0">
-                    <div class="card-header bg-gradient-primary text-white text-center">
+                    <div class="card-header text-dark text-center">
                         <h5 class="card-title mb-0">Surat Bebas Peminjaman</h5>
                     </div>
                     <div class="card-body">
@@ -82,7 +95,7 @@
             <!-- Sertifikat TOEIC -->
             <div class="col-md-4">
                 <div class="card shadow-lg border-0">
-                    <div class="card-header bg-gradient-primary text-white text-center">
+                    <div class="card-header text-dark text-center">
                         <h5 class="card-title mb-0">SSertifikat TOEIC</h5>
                     </div>
                     <div class="card-body">
@@ -102,7 +115,7 @@
             <!-- SKKM -->
             <div class="col-md-4">
                 <div class="card shadow-lg border-0">
-                    <div class="card-header bg-gradient-primary text-white text-center">
+                    <div class="card-header text-dark text-center">
                         <h5 class="card-title mb-0">SKKM</h5>
                     </div>
                     <div class="card-body">
