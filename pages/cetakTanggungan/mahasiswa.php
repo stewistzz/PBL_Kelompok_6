@@ -1,13 +1,14 @@
+<!-- Content Header -->
 <section class="content-header">
-    <!-- toggle -->
-    <?php include('layouts/toggle.php'); ?>
-    <!-- toggle -->
     <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-12">
-                <h1 class="text-center font-weight-bold">Surat Keterangan Mahasiswa</h1>
+        <div class="row mb-4">
+            <!-- Header Section -->
+            <div class="col-12">
+                <div class="jumbotron bg-light text-center shadow-sm">
+                    <h2 class="display-6 text-primary"><b>Cetak Bukti Dokumen</b></h2>
+                    <p class="lead text-secondary">Pastikan untuk mencetak bukti untuk menlanjutkan pengambilan ijazak dan transkrip.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<h3>Cetak Tanggungan Mahasiswa</h3>
