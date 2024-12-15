@@ -2,7 +2,6 @@
 include('../lib/Connection.php');
 
 session_start(); // Memulai session PHP
-
 $act = isset($_GET['act']) ? strtolower($_GET['act']) : '';
 
 if ($act == 'login') {
@@ -38,7 +37,7 @@ if ($act == 'login') {
                     if ($adminData = sqlsrv_fetch_array($adminResult, SQLSRV_FETCH_ASSOC)) {
                         $_SESSION['account_id'] = $adminData['account_id'];
                         $_SESSION['user_id'] = $adminData['admin_id']; // Simpan ID spesifik admin
-                        header('Location: ../dashboardAdmin.php');
+                        header('Location: ../index.php');
                         exit();
                     }
                 } elseif ($row['role_name'] === 'Mahasiswa') {
@@ -49,25 +48,25 @@ if ($act == 'login') {
                     if ($studentData = sqlsrv_fetch_array($studentResult, SQLSRV_FETCH_ASSOC)) {
                         $_SESSION['account_id'] = $studentData['account_id'];
                         $_SESSION['user_id'] = $studentData['mahasiswa_id']; // Simpan ID spesifik mahasiswa
-                        header('Location: ../dashboardMahasiswa.php');
+                        header('Location: ../index.php');
                         exit();
                     }
                 } else {
                     $_SESSION['flash_status'] = false;
                     $_SESSION['flash_message'] = 'Role tidak dikenali.';
-                    header('Location: ../index.php');
+                    header('Location: ../login.php');
                     exit();
                 }
             } else {
                 $_SESSION['flash_status'] = false;
                 $_SESSION['flash_message'] = 'Username atau password salah.';
-                header('Location: ../index.php');
+                header('Location: ../login.php');
                 exit();
             }
         } else {
             $_SESSION['flash_status'] = false;
             $_SESSION['flash_message'] = 'Username tidak ditemukan.';
-            header('Location: ../index.php');
+            header('Location: ../login.php');
             exit();
         }
 
@@ -76,14 +75,14 @@ if ($act == 'login') {
         // Tangani error
         $_SESSION['flash_status'] = false;
         $_SESSION['flash_message'] = 'Terjadi kesalahan: ' . $e->getMessage();
-        header('Location: ../index.php');
+        header('Location: ../login.php');
         exit();
     }
 } elseif ($act == 'logout') {
     // Hapus semua data session
     session_unset();
     session_destroy();
-    header('Location: ../index.php');
+    header('Location: ../login.php');
     exit();
 }
 ?>

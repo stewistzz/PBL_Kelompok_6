@@ -1,12 +1,13 @@
 <!-- Content Header -->
 <section class="content-header">
-    <!-- toggle -->
-    <?php include('layouts/toggle.php'); ?>
-    <!-- toggle -->
     <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-12">
-                <h1 class="text-center font-weight-bold">Surat Keterangan Mahasiswa</h1>
+        <div class="row mb-4">
+            <!-- Header Section -->
+            <div class="col-12">
+                <div class="jumbotron bg-light text-center shadow-sm">
+                    <h2 class="display-6 text-primary">Upload Dokumen</h2>
+                    <p class="lead text-secondary">Pastikan semua file yang diunggah sesuai dengan format dan persyaratan yang berlaku.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -16,79 +17,113 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <!-- Form upload dokumen -->
-            <div class="col-md-12 mb-4">
-                <div class="card shadow-sm">
+            <!-- Reusable Upload Card -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-white text-center">
+                        <h5 class="card-title mb-0">Laporan Tugas Akhir / Skripsi</h5>
+                    </div>
                     <div class="card-body">
-                        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="kategori_id" value="1"> <!-- ID kategori dokumen -->
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="kategori_id" value="1">
                             <div class="form-group">
-                                <label for="laporanTugasAkhir">Pilih file untuk Laporan Tugas Akhir</label>
-                                <input type="file" name="file" id="laporanTugasAkhir" class="form-control-file" required>
+                                <label for="fileLaporan" class="text-secondary">Pilih file</label>
+                                <input type="file" name="file" id="fileLaporan" class="form-control" required>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title">Laporan Tugas Akhir / Skripsi</h5>
-                                <button type="submit" name="submit" class="btn btn-warning">Upload</button>
-                            </div>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-upload"></i> Upload File
+                            </button>
                         </form>
-                        <div id="statusMessage"></div>
-                        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="kategori_id" value="1"> <!-- ID kategori dokumen -->
-                            <div class="form-group">
-                                <label for="laporanTugasAkhir">Pilih file untuk Surat Bebas Kompen</label>
-                                <input type="file" name="file" id="laporanTugasAkhir" class="form-control-file" required>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title">Surat Bebas Kompen</h5>
-                                <button type="submit" name="submit" class="btn btn-warning">Upload</button>
-                            </div>
-                        </form>
-                        <div id="statusMessage"></div>
-                        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="kategori_id" value="1"> <!-- ID kategori dokumen -->
-                            <div class="form-group">
-                                <label for="laporanTugasAkhir">Pilih file untuk Surat Bebas Peminjaman</label>
-                                <input type="file" name="file" id="laporanTugasAkhir" class="form-control-file" required>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title">Surat Bebas Peminjaman</h5>
-                                <button type="submit" name="submit" class="btn btn-warning">Upload</button>
-                            </div>
-                        </form>
-                        <div id="statusMessage"></div>
-                        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="kategori_id" value="1"> <!-- ID kategori dokumen -->
-                            <div class="form-group">
-                                <label for="laporanTugasAkhir">Pilih file untuk Sertifikat TOEIC</label>
-                                <input type="file" name="file" id="laporanTugasAkhir" class="form-control-file" required>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title">Sertifikat TOEIC</h5>
-                                <button type="submit" name="submit" class="btn btn-warning">Upload</button>
-                            </div>
-                        </form>
-                        <div id="statusMessage"></div>
-                        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="kategori_id" value="1"> <!-- ID kategori dokumen -->
-                            <div class="form-group">
-                                <label for="laporanTugasAkhir">Pilih file untuk SKKM</label>
-                                <input type="file" name="file" id="laporanTugasAkhir" class="form-control-file" required>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="card-title">SKKM</h5>
-                                <button type="submit" name="submit" class="btn btn-warning">Upload</button>
-                            </div>
-                        </form>
-                        <div id="statusMessage"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Lainnya form upload (sama dengan di atas untuk kategori lain) -->
+            <!-- Surat Bebas Kompen -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-white text-center">
+                        <h5 class="card-title mb-0">Surat Bebas Kompen</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="kategori_id" value="2">
+                            <div class="form-group">
+                                <label for="fileKompen" class="text-secondary">Pilih file</label>
+                                <input type="file" name="file" id="fileKompen" class="form-control" required>
+                            </div>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-upload"></i> Upload File
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Surat Bebas Peminjaman -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-white text-center">
+                        <h5 class="card-title mb-0">Surat Bebas Peminjaman</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="kategori_id" value="3">
+                            <div class="form-group">
+                                <label for="filePeminjaman" class="text-secondary">Pilih file</label>
+                                <input type="file" name="file" id="filePeminjaman" class="form-control" required>
+                            </div>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-upload"></i> Upload File
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Sertifikat TOEIC -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-white text-center">
+                        <h5 class="card-title mb-0">SSertifikat TOEIC</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="kategori_id" value="4">
+                            <div class="form-group">
+                                <label for="filePeminjaman" class="text-secondary">Pilih file</label>
+                                <input type="file" name="file" id="filePeminjaman" class="form-control" required>
+                            </div>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-upload"></i> Upload File
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- SKKM -->
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-white text-center">
+                        <h5 class="card-title mb-0">SKKM</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="kategori_id" value="4">
+                            <div class="form-group">
+                                <label for="filePeminjaman" class="text-secondary">Pilih file</label>
+                                <input type="file" name="file" id="filePeminjaman" class="form-control" required>
+                            </div>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-upload"></i> Upload File
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+
 
 <!-- Tambahkan jQuery dan AJAX Script -->
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->

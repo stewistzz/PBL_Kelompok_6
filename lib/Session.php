@@ -1,7 +1,7 @@
 <?php
 class Session
 {
-    public function construct()
+    public function __construct()
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
