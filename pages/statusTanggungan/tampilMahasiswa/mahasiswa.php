@@ -1,18 +1,27 @@
-
 <!-- Content Header -->
+<style>
+    .jumbotron {
+        background: linear-gradient(135deg, #0056b3, #003366);
+        border-radius: 15px;
+        color: #fff;
+    }
+</style>
+
+
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-4">
             <!-- Header Section -->
             <div class="col-12">
-                <div class="jumbotron bg-light text-center shadow-sm">
-                    <h2 class="display-6 text-primary"><b>Cek Status Dokumen</b></h2>
-                    <p class="lead text-secondary">Pastikan untuk mengecek status dari dokumen anda agar tidak terjadi keterlambatan pengumpulan.</p>
+                <div class="jumbotron bg-dark text-center shadow-sm">
+                    <h2 class="display-6"><b>Cek Status Dokumen</b></h2>
+                    <p class="lead">Pastikan untuk mengecek status dari dokumen anda agar tidak terjadi keterlambatan pengumpulan.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<hr>
 
 <!-- Content -->
 <section class="content">
