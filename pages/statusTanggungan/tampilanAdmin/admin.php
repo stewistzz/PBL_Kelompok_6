@@ -1,27 +1,9 @@
-<!-- Content Header -->
+
 <style>
-    .jumbotron {
-        background: linear-gradient(135deg, #0056b3, #003366);
-        border-radius: 15px;
-        color: #fff;
+    .content {
+        margin-top: 30px;
     }
 </style>
-
-
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-4">
-            <!-- Header Section -->
-            <div class="col-12">
-                <div class="jumbotron bg-dark text-center shadow-sm">
-                    <h2 class="display-6"><b>Cek Status Dokumen</b></h2>
-                    <p class="lead">Pastikan untuk mengecek status dari dokumen anda agar tidak terjadi keterlambatan pengumpulan.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<hr>
 
 <!-- Content -->
 <section class="content">
@@ -32,82 +14,91 @@
                     <div class="card-header bg-primary text-white">
                         <h3 class="card-title">Status Dokumen</h3>
                     </div>
-                    <div class="card-body">
-                        <!-- Table -->
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-striped">
-                                <thead class="bg-light">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Dokumen</th>
-                                        <th>Keterangan</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Pembayaran UKT</td>
-                                        <td>Sudah Terbayarkan</td>
-                                        <td>
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Laporan Tugas Akhir / Skripsi</td>
-                                        <td>Sudah Terpenuhi</td>
-                                        <td>
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Surat Bebas Kompen</td>
-                                        <td>Sudah Terpenuhi</td>
-                                        <td>
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Surat Bebas Peminjaman</td>
-                                        <td>Sudah Terpenuhi</td>
-                                        <td>
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Sertifikat TOEIC</td>
-                                        <td>
-                                            <span class="text-danger">
-                                                Skor anda tidak memenuhi syarat
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-danger">Belum Terpenuhi</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>SKKM</td>
-                                        <td>Sudah Terpenuhi</td>
-                                        <td>
-                                            <span class="badge badge-success">Sudah Terpenuhi</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                </div>
+                <div class="card-body">
+                    <!-- Table -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Dokumen</th>
+                                    <th>Lihat Dokumen</th>
+                                    <th>Keterangan</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="content"></tbody>
+                        </table>
                     </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary">
-                            <i class="fas fa-print"></i> Cetak Surat Keterangan
-                        </button>
-                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-primary" name="simpan" id="simpan">
+                        <i class="fas fa-save"></i> Simpan
+                    </button>
                 </div>
             </div>
         </div>
+        <!-- simpan data tabel -->
+        <!-- <div class="data"></div> -->
+        <div class="data">
+            <!-- Konten akan dimuat di sini setelah klik tombol Detail -->
+        </div>
+
+    </div>
     </div>
 </section>
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- DataTable -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // menampilkan data dari tabel mahasiswa yang telah melakukan upload  
+        $('.data').load("pages/statusTanggungan/tampilanAdmin/indexAdmin.php");
+
+        $('#simpan').on('click', function() {
+            // Mengumpulkan data dari setiap baris tabel
+            let dataToSave = [];
+
+            $('tr').each(function() {
+                let dokumenId = $(this).find('input[name="dokumen_id"]').val(); // Ambil dokumen_id dari hidden input
+                let status = $(this).find('#status').val(); // Ambil status
+                let keterangan = $(this).find('#keterangan').val(); // Ambil keterangan
+
+                // Pastikan data valid sebelum dimasukkan ke dalam array
+                if (dokumenId && status && keterangan) {
+                    dataToSave.push({
+                        dokumen_id: dokumenId,
+                        status: status,
+                        keterangan: keterangan
+                    });
+                }
+            });
+
+            // Kirim data ke backend untuk disimpan
+            $.ajax({
+                url: 'action/statusAdmin.php', // Ganti dengan path yang sesuai
+                method: 'POST',
+                data: {
+                    data: JSON.stringify(dataToSave)
+                }, // Kirim data dalam format JSON
+                success: function(response) {
+                    let result = JSON.parse(response);
+                    if (result.status === 'success') {
+                        alert(result.message);
+                    } else {
+                        alert('Terjadi kesalahan saat menyimpan data.');
+                    }
+                },
+                error: function() {
+                    alert('Terjadi kesalahan saat menghubungi server.');
+                }
+            });
+        });
+    });
+</script>

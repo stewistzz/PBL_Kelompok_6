@@ -33,9 +33,9 @@ $akun = getAkun();
         <nav class="navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
+                </li> -->
                 <div class="row mb-2">
                     <div class="col-sm-12">
                         <h2 class="text-center font-weight-bold" style="text-align: center;">Daftar Admin</h2>

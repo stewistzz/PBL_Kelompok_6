@@ -33,7 +33,7 @@ try {
         SELECT 
             jd.jenis_dokumen, 
             bt.path, 
-            bt.status_bebas_tanggungan 
+            bt.status_bebas_tanggungan as Status
         FROM 
             BebasTanggungan bt
         INNER JOIN 
@@ -56,7 +56,6 @@ try {
         $data[] = $row;
     }
     sqlsrv_free_stmt($query);
-
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
     die();
@@ -71,7 +70,6 @@ try {
         color: #fff;
     }
 </style>
-
 
 <section class="content-header">
     <div class="container-fluid">
@@ -89,59 +87,61 @@ try {
 <hr>
 
 
-    <!-- Main Content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title"><b>Selamat datang, <?= htmlspecialchars($namaMahasiswa); ?></b></h3>
-                </div>
-                <div class="card-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Persyaratan</th>
-                                <th>Berkas</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty($data)): ?>
-                                <?php foreach ($data as $index => $row): ?>
-                                    <tr>
-                                        <td><?= $index + 1 ?></td>
-                                        <td><?= htmlspecialchars($row['jenis_dokumen']) ?></td>
-                                        <td><a href="<?= htmlspecialchars($row['path']) ?>" target="_blank">Lihat Berkas</a></td>
-                                        <td>
-                                            <?php if ($row['status_bebas_tanggungan'] === 'Sudah Terbayar'): ?>
-                                                <span class="badge bg-success">Sudah Terbayar</span>
-                                            <?php elseif ($row['status_bebas_tanggungan'] === 'Belum Terbayar'): ?>
-                                                <span class="badge bg-danger">Belum Terbayar</span>
-                                            <?php else: ?>
-                                                <span class="badge bg-warning"><?= htmlspecialchars($row['status_bebas_tanggungan']) ?></span>
-                                            <?php endif; ?>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
+<!-- Main Content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"><b>Selamat datang, <?= htmlspecialchars($namaMahasiswa); ?></b></h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Persyaratan</th>
+                            <th>Berkas</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($data)): ?>
+                            <?php foreach ($data as $index => $row): ?>
                                 <tr>
-                                    <td colspan="4" class="text-center">Tidak ada data tersedia.</td>
+                                    <td><?= $index + 1 ?></td>
+                                    <td><?= htmlspecialchars($row['jenis_dokumen']) ?></td>
+                                    <td><a href="pages/suratKeterangan/<?= htmlspecialchars($row['path']) ?>" target="_blank">Lihat Berkas</a></td>
+                                    <td>
+                                        <?php if ($row['Status'] === 'sukses'): ?>
+                                            <span class="badge badge-success"><?= htmlspecialchars($row['Status']); ?></span>
+                                        <?php elseif ($row['Status'] === 'gagal'): ?>
+                                            <span class="badge badge-danger"><?= htmlspecialchars($row['Status']); ?></span>
+                                        <?php elseif ($row['Status'] === 'pending'): ?>
+                                            <span class="badge badge-warning"><?= htmlspecialchars($row['Status']); ?></span>
+                                        <?php else: ?>
+                                            <span class="badge badge-info"><?= htmlspecialchars($row['Status'] ?? 'Belum Diproses'); ?></span>
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                    <div class="d-flex justify-content-between mt-3">
-                        <span>Menampilkan <?= count($data) ?> data</span>
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Sebelumnya</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Selanjutnya</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="4" class="text-center">Tidak ada data tersedia.</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between mt-3">
+                    <span>Menampilkan <?= count($data) ?> data</span>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Sebelumnya</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Selanjutnya</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
