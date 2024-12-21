@@ -35,6 +35,7 @@ buttons/css/buttons.bootstrap4.min.css">
 
   <!-- jQuery -->
   <script src="adminlte/plugins/jquery/jquery.min.js"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -80,11 +81,11 @@ buttons/css/buttons.bootstrap4.min.css">
           case 'status':
             include('pages/statusTanggungan/tampilMahasiswa/mahasiswa.php');
             break;
-          case 'bukti':
-            include('pages/cetakTanggungan/mahasiswa.php');
-            break;
+          // case 'bukti':
+          //   include('pages/cetakTanggungan/mahasiswa.php');
+          //   break;
           case 'notifikasi':
-            include('components/notifikasi/notif.php');
+            include('pages/notifikasi/detail.php');
             break;
           default:
             include('pages/404.php');
@@ -163,6 +164,7 @@ buttons/css/buttons.bootstrap4.min.css">
   <!-- ./wrapper -->
 
 
+
   <!-- Bootstrap 4 -->
   <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -175,8 +177,7 @@ buttons/css/buttons.bootstrap4.min.css">
   <script src="adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="adminlte/plugins/datatables-
-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
   <script src="adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
   <script src="adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
   <script src="adminlte/plugins/jszip/jszip.min.js"></script>
