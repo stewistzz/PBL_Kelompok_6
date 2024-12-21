@@ -34,9 +34,9 @@ $akun = getAkun();
         <nav class="navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
+                </li> -->
                 <div class="row mb-2">
                     <div class="col-sm-12">
                         <h2 class="text-center font-weight-bold" style="text-align: center;">Daftar Mahasiswa</h2>
@@ -165,12 +165,6 @@ $akun = getAkun();
                 $('#angkatan').val(data.angkatan);
                 $('#nama_kelas').val(data.nama_kelas);
                 $('#status').val(data.status);
-                // $('#buku_kode').val(data.buku_kode);
-                // $('#buku_nama').val(data.buku_nama);
-                // $('#kategori_id').val(data.kategori_id).trigger('change');
-                // $('#jumlah').val(data.jumlah);
-                // $('#deskripsi').val(data.deskripsi || '');
-                // $('#gambar').val(data.gambar);
             }
         });
     }
@@ -192,75 +186,7 @@ $akun = getAkun();
             });
         }
     }
-    //sini
-    // var tabelData;
-    // $(document).ready(function() {
-    //     tabelData = $('#table-data').DataTable({
-    //         ajax: 'action/mahasiswaAction.php?act=load',
-    //     });
-    //     $('#form-tambah').validate({
-    //         rules: {
-    //             account_id: {
-    //                 required: true
-    //             },
-    //             nama: {
-    //                 required: true
-    //             },
-    //             nim: {
-    //                 required: true
-    //             },
-    //             email: {
-    //                 required: true
-    //             },
-    //             angkatan: {
-    //                 required: true
-    //             },
-    //             prodi: {
-    //                 required: true
-    //             },
-    //             status: {
-    //                 required: true
-    //             },
-    //         },
-    //         messages: {
-    //             kategori_id: {
-    //                 required: "Kategori harus dipilih."
-    //             },
-    //             deskripsi: {
-    //                 required: "Deskripsi tidak boleh kosong."
-    //             },
-    //         },
-    //         errorElement: 'span',
-    //         errorPlacement: function(error, element) {
-    //             error.addClass('invalid-feedback');
-    //             element.closest('.form-group').append(error);
-    //         },
-    //         highlight: function(element) {
-    //             $(element).addClass('is-invalid');
-    //         },
-    //         unhighlight: function(element) {
-    //             $(element).removeClass('is-invalid');
-    //         },
-    //         submitHandler: function(form) {
-    //             $.ajax({
-    //                 url: $(form).attr('action'),
-    //                 method: 'post',
-    //                 data: new FormData(form),
-    //                 processData: false,
-    //                 contentType: false,
-    //                 success: function(response) {
-    //                     var result = JSON.parse(response);
-    //                     if (result.status) {
-    //                         $('#form-data').modal('hide');
-    //                         tabelData.ajax.reload();
-    //                     } else {
-    //                         alert(result.message);
-    //                     }
-    //                 }
-    //             });
-    //         }
-    //     });
-    // });
+
     var tabelData;
     $(document).ready(function() {
         tabelData = $('#table-data').DataTable({

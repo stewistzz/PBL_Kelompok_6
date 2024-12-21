@@ -5,7 +5,7 @@
             <img src="adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="pages/profile/profile.php" class="d-block">Alexander Pierce</a>
         </div>
     </div>
 
@@ -29,30 +29,32 @@
             </li>
             <li class="nav-item">
                 <a href="index.php?page=template" class="nav-link">
-                <i class="nav-icon fa fa-arrow-down"></i>
+                    <i class="nav-icon fa fa-arrow-down"></i>
                     <p>Template Surat</p>
                 </a>
             </li>
             <li class="nav-item ">
                 <a href="index.php?page=upload" class="nav-link">
-                <i class="nav-icon fas fa-file-alt"></i>                    <p>Upload Syarat</p>
+                    <i class="nav-icon fas fa-file-alt"></i>
+                    <p>Upload Syarat</p>
                 </a>
             </li>
             <li class="nav-item ">
                 <a href="index.php?page=status" class="nav-link">
-                <i class="nav-icon fas fa-check-circle"></i>                    <p>Cek Status</p>
+                    <i class="nav-icon fas fa-check-circle"></i>
+                    <p>Cek Status</p>
                 </a>
             </li>
-            <li class="nav-item ">
+            <!-- <li class="nav-item ">
                 <a href="index.php?page=bukti" class="nav-link">
-                <i class="nav-icon fas fa-print"></i>
-                <p>Cetak Bukti</p>
+                    <i class="nav-icon fas fa-print"></i>
+                    <p>Cetak Bukti</p>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item border-bottom">
                 <a href="index.php?page=notifikasi" class="nav-link">
-                <i class="nav-icon fas fa-bell"></i>
-                <p>Notifikasi</p>
+                    <i class="nav-icon fas fa-bell"></i>
+                    <p>Notifikasi</p>
                 </a>
             </li>
             <li class="nav-item">

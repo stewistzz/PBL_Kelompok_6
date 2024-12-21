@@ -41,13 +41,17 @@ if ($act == 'login') {
                         exit();
                     }
                 } elseif ($row['role_name'] === 'Mahasiswa') {
-                    $studentQuery = "SELECT mahasiswa_id, account_id FROM Mahasiswa WHERE account_id = ?";
+                    $studentQuery = "SELECT * FROM Mahasiswa WHERE account_id = ?";
                     $studentParams = [$row['account_id']];
                     $studentResult = sqlsrv_query($db, $studentQuery, $studentParams);
 
                     if ($studentData = sqlsrv_fetch_array($studentResult, SQLSRV_FETCH_ASSOC)) {
                         $_SESSION['account_id'] = $studentData['account_id'];
                         $_SESSION['user_id'] = $studentData['mahasiswa_id']; // Simpan ID spesifik mahasiswa
+                        $_SESSION['nama'] = $studentData['nama'];
+                        $_SESSION['nim'] = $studentData['nim'];
+                        $_SESSION['angkatan'] = $studentData['angkatan'];
+                        $_SESSION['nama_kelas'] = $studentData['nama_kelas'];
                         header('Location: ../index.php');
                         exit();
                     }
