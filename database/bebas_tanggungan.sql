@@ -52,7 +52,3 @@ CREATE TABLE Account (
     password VARCHAR(255) NOT NULL,
     role_name VARCHAR(50) NOT NULL
 );
-
-ALTER TABLE BebasTanggungan
-ADD file_name VARCHAR(255);
-

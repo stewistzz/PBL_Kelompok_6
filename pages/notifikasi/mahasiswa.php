@@ -1,28 +1,27 @@
+
+<!-- Content Header -->
 <style>
-    
-    hr  {
-        height: 10px; 
+    .jumbotron {
+        background: linear-gradient(135deg, #0056b3, #003366);
+        border-radius: 15px;
+        color: #fff;
     }
 </style>
 
 
-<!-- searching section -->
 <section class="content-header">
-    <!-- toggle -->
-    <?php include('layouts/toggle.php'); ?>
-    <!-- toggle -->
     <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="input-group mb-3 w-50 m-auto">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2">Button</button>
+        <div class="row mb-4">
+            <!-- Header Section -->
+            <div class="col-12">
+                <div class="jumbotron bg-dark text-center shadow-sm">
+                    <h2 class="display-6"><b>Notifikasi Mahasiswa</b></h2>
+                    <p class="lead">Pastikan untuk mengecek notifikasi yang dikirimkan oleh admin.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <hr>
 
 <!-- Notifikasi Mahasiswa -->
