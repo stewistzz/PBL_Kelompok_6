@@ -59,17 +59,26 @@
 // Include file koneksi
 include('lib/Connection.php'); // Sesuaikan path dengan file Connection.php Anda
 
-// Query untuk mendapatkan data nama admin dan catatan
+
+// Get mahasiswa_id from session
+$mahasiswa_id = $_SESSION['user_id'] ?? null;
+
+// Query untuk mendapatkan data nama admin dan catatan berdasarkan mahasiswa_id
 $query = "
     SELECT Admin.nama AS nama_admin, BebasTanggungan.catatan 
     FROM BebasTanggungan
-    JOIN Admin ON BebasTanggungan.admin_id = Admin.admin_id";
+    JOIN Admin ON BebasTanggungan.admin_id = Admin.admin_id
+    WHERE BebasTanggungan.mahasiswa_id = ?"; // Filter by mahasiswa_id
 $result = null;
 
 if ($use_driver == 'mysql') {
-    $result = $db->query($query); // Menggunakan MySQL
+    $stmt = $db->prepare($query);
+    $stmt->bind_param("i", $mahasiswa_id); // Assuming mahasiswa_id is an integer
+    $stmt->execute();
+    $result = $stmt->get_result(); // Using MySQL
 } else if ($use_driver == 'sqlsrv') {
-    $result = sqlsrv_query($db, $query); // Menggunakan SQL Server
+    $params = [$mahasiswa_id];
+    $result = sqlsrv_query($db, $query, $params); // Using SQL Server
 }
 
 // Tampilkan notifikasi jika ada data
@@ -81,9 +90,10 @@ if ($result && (($use_driver == 'mysql' && $result->num_rows > 0) || ($use_drive
                     <span>
                         <i class="fas fa-user-circle"></i>
                         <strong><?= htmlspecialchars($row['nama_admin']) ?>:</strong>
-                        <?= htmlspecialchars(substr($row['catatan'] ?? '', 0, 50)) ?>...
+                        <?= htmlspecialchars(substr($row['catatan'] ?? '', 0, 50)) ?>
                     </span>
-                    <span class="text-muted"><?= date('d M Y') // Tambahkan tanggal jika tersedia ?></span>
+                    <span class="text-muted"><?= date('d M Y') // Tambahkan tanggal jika tersedia 
+                                                ?></span>
                 </li>
             <?php endwhile; ?>
         </ul>
