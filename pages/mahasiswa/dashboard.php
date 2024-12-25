@@ -91,8 +91,8 @@ try {
 <section class="content">
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title"><b>Selamat datang, <?= htmlspecialchars($namaMahasiswa); ?></b></h3>
+            <div class="card-header bg-dark">
+                <h3 class="card-title "><b>Selamat datang, <?= htmlspecialchars($namaMahasiswa); ?></b></h3>
             </div>
             <div class="card-body">
                 <table class="table table-bordered">

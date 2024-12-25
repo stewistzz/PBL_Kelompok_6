@@ -5,7 +5,8 @@
             <img src="adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="pages/profile/profile.php" class="d-block">Alexander Pierce</a>
+            <a href="index.php?page=profile" class="d-block">Alexander Pierce</a>
+            <!-- <a href="pages/profile/profile.php" class="d-block">Alexander Pierce</a> -->
         </div>
     </div>
 
