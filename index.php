@@ -81,11 +81,14 @@ buttons/css/buttons.bootstrap4.min.css">
           case 'status':
             include('pages/statusTanggungan/tampilMahasiswa/mahasiswa.php');
             break;
-          // case 'bukti':
-          //   include('pages/cetakTanggungan/mahasiswa.php');
-          //   break;
+            // case 'bukti':
+            //   include('pages/cetakTanggungan/mahasiswa.php');
+            //   break;
           case 'notifikasi':
             include('pages/notifikasi/detail.php');
+            break;
+          case 'profile':
+            include('pages/profile/profile1.php');
             break;
           default:
             include('pages/404.php');
@@ -105,9 +108,9 @@ buttons/css/buttons.bootstrap4.min.css">
           case 'mahasiswa':
             include('pages/modifData/mahasiswa.php');
             break;
-            case 'admin':
-              include('pages/modifData/admin.php');
-              break;
+          case 'admin':
+            include('pages/modifData/admin.php');
+            break;
           default:
             include('pages/404.php');
             break;
@@ -119,24 +122,7 @@ buttons/css/buttons.bootstrap4.min.css">
       <!-- Main content -->
       <section class="content">
 
-        <!-- Default box -->
-        <div class="card bg-dark">
-          <div class="card-header">
-            <h3 class="card-title">Selamat Datang</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Selamat Datang <b>Pengguna</b>. Anda login sebagai <b><?= $role ?></b>
-          </div>
-          <!-- /.card-body -->
+        
           <div class="card-footer">
             <!-- Footer -->
           </div>
