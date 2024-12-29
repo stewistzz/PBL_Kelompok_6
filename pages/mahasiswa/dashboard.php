@@ -29,7 +29,7 @@ try {
     sqlsrv_free_stmt($queryNama);
 
     // Query untuk mendapatkan data persyaratan, berkas, dan status
-    $sql = "
+    $sql = " 
         SELECT 
             jd.jenis_dokumen, 
             bt.path, 
@@ -62,31 +62,49 @@ try {
 }
 ?>
 
-<!-- Content Header -->
-<style>
-    .jumbotron {
-        background: linear-gradient(135deg, #0056b3, #003366);
-        border-radius: 15px;
-        color: #fff;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard Mahasiswa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="medium"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container-fluid px-4 py-8">
+        <!-- Content Header -->
+        <style>
+            .jumbotron {
+                background: linear-gradient(135deg, #0056b3, #003366);
+                border-radius: 15px;
+                color: #fff;
+            }
+        </style>
 
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-4">
-            <!-- Header Section -->
-            <div class="col-12">
-                <div class="jumbotron bg-dark text-center shadow-sm">
-                    <h2 class="display-6"><b>Dashboard Mahasiswa</b></h2>
-                    <p class="lead">Pastikan data yang anda kirimkan telah benar dan sesuai.</p>
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-4">
+                    <!-- Header Section -->
+                    <div class="col-12">
+                        <div class="jumbotron bg-dark text-center shadow-sm">
+                            <h2 class="display-6"><b>Dashboard Mahasiswa</b></h2>
+                            <p class="lead">Pastikan data yang anda kirimkan telah benar dan sesuai.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<hr>
+        </section>
+        <hr>
 
-
+        <!-- Welcome Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="card-title"><b>Selamat datang, <?= htmlspecialchars($namaMahasiswa); ?></b></h3>
 <!-- Main Content -->
 <section class="content">
     <div class="container-fluid">
@@ -102,6 +120,7 @@ try {
                             <th>Persyaratan</th>
                             <th>Berkas</th>
                             <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -131,17 +150,43 @@ try {
                         <?php endif; ?>
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-between mt-3">
-                    <span>Menampilkan <?= count($data) ?> data</span>
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Sebelumnya</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Selanjutnya</a></li>
-                        </ul>
-                    </nav>
-                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart Section -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Progress Berkas</h3>
+            </div>
+            <div class="card-body">
+                <div id="pieChart" class="h-80"></div>
+                <script>
+                    const berkas = {
+                        'Belum Dikirim': 2,
+                        'Valid': 2,
+                        'Belum Valid': 1,
+                        'Pending': 1
+                    };
+
+                    const chart = echarts.init(document.getElementById('pieChart'));
+                    const option = {
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{b}: {c} ({d}%)'
+                        },
+                        series: [{
+                            type: 'pie',
+                            radius: ['40%', '70%'],
+                            data: Object.entries(berkas).map(([name, value]) => ({
+                                name, value
+                            }))
+                        }]
+                    };
+
+                    chart.setOption(option);
+                </script>
             </div>
         </div>
     </div>
-</section>
+</body>
+</html>
