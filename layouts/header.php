@@ -76,6 +76,8 @@
         <img src="assets/img/jti.png" alt="Logo JTI" class="logo-jti">
     </header>
     <div class="header-bottom"></div>
-    
+
+
 </body>
+
 </html>
