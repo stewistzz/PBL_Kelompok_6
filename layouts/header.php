@@ -24,9 +24,9 @@
         }
         /* Gambar logo Polinema di kiri */
         .header .logo-poltek {
-            height: 80px; /* Ukuran logo Polinema */
-            margin-right: 20px; /* Jarak antara logo Polinema dan judul */
-            margin-left: 250px; /* Memberi jarak agar ada ruang untuk sidebar */
+            height: 80px; 
+            margin-right: 20px; 
+            margin-left: 250px; 
         }
         /* Teks Judul */
         .header .title {
@@ -75,8 +75,7 @@
         <!-- Gambar kanan JTI -->
         <img src="assets/img/jti.png" alt="Logo JTI" class="logo-jti">
     </header>
-
     <div class="header-bottom"></div>
-
+    
 </body>
 </html>
