@@ -41,14 +41,14 @@ try {
 ?>
 
 <div class="wrapper" style="display: flex; flex-direction: row; background-color: #f9fafb;">
-    <div class="sidebar" style="background-color: #ffffff; color: #000000; padding: 0; margin: 0; width: 250px; position: fixed; top: 0; height: 100vh;">>
+    <div class="sidebar" style="background-color: #ffffff; color: #000000; padding: 0; margin: 0; width: 250px; position: fixed; top: 0; height: 100vh;">
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
                 <i class="fas fa-user" class="img-circle elevation-2" alt="User Image"></i>
             </div>
             <div class="info">
-                <a href="index.php?page=profile" class="d-block" style="color: #000000;"><?php echo $fullName; ?></a>
+                <a href="index.php?page=profile" class="d-block" style="color: #000000;"> <?php echo $fullName; ?></a>
             </div>
         </div>
         <!-- Sidebar Menu -->
