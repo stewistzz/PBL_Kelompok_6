@@ -88,7 +88,7 @@ buttons/css/buttons.bootstrap4.min.css">
             include('pages/notifikasi/detail.php');
             break;
           case 'profile':
-            include('pages/profile/profile1.php');
+            include('pages/profile/profile.php');
             break;
           default:
             include('pages/404.php');
